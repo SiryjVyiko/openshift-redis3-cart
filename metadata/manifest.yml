@@ -4,7 +4,7 @@ Display-Name: Redis
 Description: "https://github.com/SiryjVyiko/openshift-redis3-cart.git"
 Version: "3.0"
 Website: https://github.com/smarterclayton/openshift-redis-cart
-Source-Url: https://github.com/SiryjVyiko/openshift-redis-cart.git
+Source-Url: https://github.com/SiryjVyiko/openshift-redis3-cart.git
 Cartridge-Version: 0.1.0
 License: GPL
 Vendor: smarterclayton
