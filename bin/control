@@ -5,6 +5,8 @@
 pid=/opt/repo/pid/redis.pid
 sentinel_pid=/opt/repo/pid/redis-sentinel.pid
 
+SENTINEL_ON="1"
+
 if [ -n $REDIS_PASSWORD ]; then
     CLI_AUTH="-a $REDIS_PASSWORD"
 fi
@@ -82,7 +84,8 @@ function start() {
     else
         echo "Redis server is already started"
     fi
-    if ! [ -f $sentinel_pid ]; then
+    if [ $SENTINEL_ON == "1" ]; then
+    	if ! [ -f $sentinel_pid ]; then
             kill -9 $(ps aux| grep "redis-sentinel" | grep -v grep | awk '{print $2}') 2>/dev/null;
             echo $REDIS_SENTINEL_CLI > /opt/repo/env/REDIS_SENTINEL_CLI
             erb /opt/repo/conf/redis-sentinel.conf.erb > /opt/repo/conf/redis-sentinel.conf; /opt/repo/versions/${Version}/bin/redis-sentinel /opt/repo/conf/redis-sentinel.conf
@@ -91,6 +94,7 @@ function start() {
                 echo "Redis Sentinel failed to start - $ret" 1>&2
                 return $ret
             fi
+    	fi
     fi
 }
 
