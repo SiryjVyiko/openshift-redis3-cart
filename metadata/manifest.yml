@@ -3,18 +3,17 @@ Cartridge-Short-Name: REDIS
 Display-Name: Redis
 Description: "https://github.com/SiryjVyiko/openshift-redis3-cart.git"
 Version: "3.0"
-Website: https://github.com/smarterclayton/openshift-redis-cart
 Source-Url: https://github.com/SiryjVyiko/openshift-redis3-cart.git
 Cartridge-Version: 0.1.0
 License: GPL
-Vendor: smarterclayton
-Cartridge-Vendor: smarterclayton
+Vendor: jelastic
+Cartridge-Vendor: jelastic
 Categories:
   - service
   - database
   - embedded
 Provides:
-  - redis-2.6
+  - redis-3.0
   - redis
 Scaling:
   Min: 1
