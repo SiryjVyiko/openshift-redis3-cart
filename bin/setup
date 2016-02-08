@@ -2,6 +2,10 @@
 
 . /etc/jelastic/environment
 
+mv /opt/repo/logrotate /etc/logrotate.d/redis;
+
+chown root:root /etc/logrotate.d/redis;
+
 echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf
 echo 'sysctl -w net.core.somaxconn=65535' >> /etc/rc.local
 set -u
