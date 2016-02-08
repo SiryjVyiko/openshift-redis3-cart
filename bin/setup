@@ -2,6 +2,8 @@
 
 . /etc/jelastic/environment
 
+echo 'vm.overcommit_memory = 1' >> /etc/sysctl.conf
+echo 'sysctl -w net.core.somaxconn=65535' >> /etc/rc.local
 set -u
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
